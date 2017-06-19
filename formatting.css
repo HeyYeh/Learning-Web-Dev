@@ -1,0 +1,46 @@
+h1 {
+    display: block;
+    font-size: 4em;  
+    position: relative;
+    text-align: center;
+    font-family:"Laila", serif;
+}
+
+.CompParent {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.CompLotto {
+    width: 1.5em;    
+    height: 1.5em auto;
+    margin-left: 1.6%;
+    display:inline-block;
+    background-color: beige;
+    border: 1px solid black;
+    font-size: 4em;
+    font-family: "Laila", sans-serif;
+}
+
+
+.Gen {
+    width: 120px;
+    height: auto;
+    font-size: 2em;   
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid black;
+    background-color: burlywood;
+    font-family: "Laila", sans-serif;   
+}
+
+.Gen:active {
+    margin-top: 32px;
+}
+
+.goo {
+    height: 40px;
+}
