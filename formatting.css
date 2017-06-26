@@ -5,11 +5,13 @@ h1 {
     text-align: center;
     font-family: "Laila", serif;
 }
+
 .CompParent {
     width: 100%;
     position: relative;
     text-align: center;
 }
+
 .CL {
     width: 1.5em;
     font-size: 4em;
@@ -20,6 +22,7 @@ h1 {
     border: 1px solid black;
     font-family: "Laila", sans-serif;
 }
+
 .Gen {
     width: 120px;
     height: auto;
@@ -33,26 +36,24 @@ h1 {
     background-color: burlywood;
     font-family: "Laila", sans-serif;
 }
+
 .Gen:active {
     margin-top: 32px;
 }
+
 #goo {
     height: 40px;
 }
 
-
-
 .Parent {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .Pick {
-  padding: .7% .4% .7% .4%;
-  margin: 0% .5% 0% .5%; 
-  width: 4%;
-  text-align: center;
-  font-size: 3.5em;
-  
+    padding: .7% .4% .7% .4%;
+    margin: 0% .5% 0% .5%;
+    width: 4%;
+    text-align: center;
+    font-size: 3.5em;
 }
-
