@@ -1,73 +1,57 @@
 //initialise variables
-var winners = [];
+var winners = [0, 0, 0, 0, 0, 0];
+var userNumb = [0, 0, 0, 0, 0, 0];
 
-//function for generating winning numbers (random, all unique, ordered)
-function Print() {
-    //testing if your numbers are okay to play with
-    "use strict";
-    var message, x;
-    message = document.getElementById("goo");
-    message.innerHTML = " ";
-    x = document.getElementById("puck").value;
-    try {
-        if (x === " ") {
-            throw "is Empty";
+//when Lotto is clicked, do the thing
+$(document).ready(function () {
+    $(".Gen").click(function () {
+        //generate the random numbers
+        for (i = 0; i < 6; i++) {
+            winners[i] = Math.floor(Math.random() * 59);
+
+            winners = winners.filter(function (item, index, inputArray) {
+                return inputArray.indexOf(item) == index;
+            });
         }
-        if (isNaN(x)) {
-            throw "not a number";
+
+        while (winners.length < 6) {
+            winners.push(Math.floor(Math.random() * 59));
+
+            winners = winners.filter(function (item, index, inputArray) {
+                return inputArray.indexOf(item) === index;
+
+
+            });
         }
-        if (x > 59) {
-            throw "too high";
-        }
-        if (x < 1) {
-            throw "too low";
-        }
-     catch (err) {
-        message.innerHTML = "Input " + err;
-    }
-    }
 
-
-
-    for (i = 0; i < 6; i++) {
-        winners[i] = Math.floor(Math.random() * 59);
-
-        winners = winners.filter(function (item, index, inputArray) {
-            return inputArray.indexOf(item) == index;
+        //sorting winners
+        winners.sort(function (a, b) {
+            return a - b;
         });
-    }
-    while (winners.length < 6) {
-        winners.push(Math.floor(Math.random() * 59));
 
-        winners = winners.filter(function (item, index, inputArray) {
-            return inputArray.indexOf(item) === index;
+        //write winners to boxes
+        for (j = 0; j < 6; j++) {
+            document.getElementById("CompLotto" + String([j])).innerHTML = winners[j];
+        }
+
+        //get user input into an array
+        $(".Pick").each(function (input, value) {
+            userNumb[input] = $(this).val();
         });
-    }
-    //sorting winners
-    winners.sort(function (a, b) {
-        return a - b;
+
+        //trying to test user input array (not working)
+        $("#test").html(userNumb);
+
+        //comparing the arrays WIP
+        $(set1).each(function (i, value) {
+            $(set2).each(function (k, value) {
+                if (set1[i] === set2[k]) {
+                    $("#wow").html(set1[i]);
+                }
+
+            })
+        })
+
+
     });
-    //writing winners to html
-    for (i = 0; i < 6; i++) {
-        document.getElementById("CompLotto" + String([i])).innerHTML = winners[i];
-    }
-}
-//testing
-//document.getElementById('goo').innerHTML = winners;
-
-
-
-function Error() {
-    var message, x;
-    message = document.getElementById("goo");
-    message.innerHTML = "";
-    x = document.getElementById("puck").value;
-    try {
-        if (x === "") throw "is Empty";
-        if (isNaN(x)) throw "not a number";
-        if (x > 59) throw "too high";
-        if (x < 0) throw "too low";
-    } catch (err) {
-        message.innerHTML = "Input " + err;
-    }
-}
+});
