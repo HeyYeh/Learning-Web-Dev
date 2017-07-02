@@ -1,6 +1,7 @@
 //initialise variables
 var winners = [0, 0, 0, 0, 0, 0];
 var userNumb = [0, 0, 0, 0, 0, 0];
+var winLevel = 0;
 
 //when Lotto is clicked, do the thing
 $(document).ready(function () {
@@ -40,17 +41,18 @@ $(document).ready(function () {
         });
 
         //trying to test user input array (not working)
-        $("#test").html(userNumb);
+        //$("#test").html(userNumb);
 
         //comparing the arrays WIP
-        $(set1).each(function (i, value) {
-            $(set2).each(function (k, value) {
-                if (set1[i] === set2[k]) {
-                    $("#wow").html(set1[i]);
+        $(winners).each(function (i, value) {
+            $(userNumb).each(function (k, value) {
+                if (String(winners[i]) === String(userNumb[k])) {
+                    winLevel = winLevel + 1;
                 }
-
             })
         })
+        $("#test").html(winLevel);
+        winLevel = 0;
 
 
     });
