@@ -2,10 +2,28 @@
 var winners = [0, 0, 0, 0, 0, 0];
 var userNumb = [0, 0, 0, 0, 0, 0];
 var winLevel = 0;
+var cash = 10;
+var week = 0;
+freebie = 0;
 
 //when Lotto is clicked, do the thing
 $(document).ready(function () {
     $(".Gen").click(function () {
+        
+        //Reset winLevel on each click
+        winLevel = 0;
+        //Take money away UNLESS player won a freebie (1 match)
+        if (freebie === 0) {
+            cash = cash - 2;
+            $(".money").html("£" + cash);
+        }
+        else {
+            freebie = 0;
+        }
+        //Progress 1 week    
+        week = week + 1;
+        $(".week").html("Week: " + week);
+
         //generate the random numbers
         for (i = 0; i < 6; i++) {
             winners[i] = Math.floor(Math.random() * 59);
@@ -52,8 +70,11 @@ $(document).ready(function () {
             })
         })
         $("#test").html(winLevel);
-        winLevel = 0;
+        //outputs number based on how many matching numbers
 
-
+        if (winLevel === 1) {
+            freebie = 1;
+        }
+        
     });
 });
