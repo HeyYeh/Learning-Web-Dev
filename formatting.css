@@ -15,7 +15,8 @@ h1 {
 .CL {
     width: 1.5em;
     font-size: 4em;
-    margin-left: 1.6%;
+    margin-left: .8%;
+    margin-right: .8%;
     height: 1.5em auto;
     display: inline-block;
     background-color: beige;
@@ -42,7 +43,8 @@ h1 {
     height: auto;
     left: -60px;
     font-size: 2em;
-    margin-left: 50%;
+    cursor: pointer;
+    margin-left: 46.3%;
     position: absolute;
     text-align: center;
     border: 1px solid black;
@@ -52,6 +54,25 @@ h1 {
 }
 
 .Gen:active {
+    margin-top: 2px;
+}
+
+.Aut {
+    width: 120px;
+    height: auto;
+    left: -60px;
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: 53.7%;
+    position: absolute;
+    text-align: center;
+    border: 1px solid black;
+    -webkit-user-select: none;
+    background-color: burlywood;
+    font-family: "Laila", sans-serif;
+}
+
+.Aut:active {
     margin-top: 2px;
 }
 
@@ -83,14 +104,41 @@ h1 {
 .money {
     font-size: 2em;
     font-family: "Laila", sans-serif;
+    margin-left: 43%;
+    position: absolute;
+}
+
+.userMoney {
+  font-size: 2em;
+  font-family: "Laila", sans-serif;
+  position: absolute;
+  margin-left: 38.1%;
+}
+
+.Winnings {
+    font-size: 2em;
+    font-family: "Laila", sans-serif;
+    margin-left: 58.5%;
+    margin-bottom: 4%;
+    position: absolute;
+}
+
+.userWin {
+  font-size: 2em;
+  font-family: "Laila", sans-serif;
+  position: absolute;
+  margin-left: 53%;
 }
 
 .weekP {
     width: 100%;
     text-align: center;
+    margin-top: 4%
 }
 
 .week {
     font-size: 1.5em;
     font-family: "Laila", sans-serif;
 }
+
+
